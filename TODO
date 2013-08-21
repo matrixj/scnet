@@ -1,0 +1,18 @@
+使用C++实现
+
+1.重构connection,结构休成员包括：fd,使用level_tigle,加上readv读，基本一次可读完数据，每次读６k（一两个以太网帧的长度，大概５００ｍｓ内最多传输的数据量），可保证对所有连接的公平性（不会因为有一条连接有较多数据而一直阻塞在那条连接上）。
+  成员函数包括：on_read_cb/enable_read_cb/disable_read_cb/
+             
+              on_close_cb/enable_close_cb/disable_close_cb/
+
+1.1 tcpserver类,作为服务器端类，结构体成员:connection
+    成员函数包括：on_connection_cb/on_message_cb(on_message_cb需要加上timestamp)
+
+２.增加loop类，one loop per thread.结构体成员包括：connection dict (使用一个字符串作为key,fd为value),
+   成员函数包括：on_connection_cb
+
+3.重构buffer结构体，增加合适的方法。
+
+４.使用channel类，
+
+５.使用__thread变量，保证线程安全

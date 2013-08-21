@@ -1,0 +1,6 @@
+Date   Speed(pages/min)   Speed(bytes/sec)  Reques(suc/fail)    Mess
+====================================================================
+1.23    108175              121167          108139/36           
+1.24    141743              158692          141743/20           set socket TCP_NODELAY.
+1.24    799887              826533          739810/77           change listen backlog value to 128.
+2.8     92663               19235296        92663/1             rewrite almost all the code
