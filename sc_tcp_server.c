@@ -13,7 +13,7 @@
 #include "sc_fd.h"
 #include "sc_socket.h"
 #include "sc_tcp_server.h"
-#include "sc_mem.h"
+//#include "sc_mem.h"
 
 
 static struct sc_tcp_server_settings *s;
